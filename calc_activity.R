@@ -33,11 +33,9 @@ run_activity_script <- function(activity_data) {
   
   # Calculate amount of activity for all users
   interval <- 120 # seconds = 2 minutes
-  
-  all_users <- c("P1", "P2", "...")
-  num_users <- length(all_users)
+  num_users <- length(human_sensors)
   activity_sum_intervals <- vector("list", num_users)
-  names(activity_sum_intervals) <- all_users
+  names(activity_sum_intervals) <- human_sensors
   activity_nintervals <- activity_sum_intervals
   current_date <- format(activity_data[[1]]$timestamp[1], format = "%Y-%m-%d")
   
@@ -88,9 +86,7 @@ run_activity_script <- function(activity_data) {
   }
   
   # Save .Rdata
-  setwd("/Path")
+  setwd(output_dir)
   save(activity_sum_intervals, file = paste(current_date, "activity_sum_intervals.Rdata", sep = " - "))
-  
-  setwd("/Path")
   save(activity_nintervals, file = paste(current_date, "activity_nintervals.Rdata", sep = " - "))
 }
