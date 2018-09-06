@@ -1,6 +1,6 @@
 # Estimote-Analysis-R
 
-###Introduction
+### Introduction
 This script analysises various aspects of the sociocultural context in a nursing home:
 - Patients activity, sleep and proximity to other patients and nurses
 - Nurses activity and proximity to patients
@@ -10,14 +10,14 @@ The data collection is done by equipping patients, patients' bed and nurses with
 accelerometer, UUID). These packets are received and parced by automation units which runs an app built using the 
 [Estimote SDK](https://developer.estimote.com/).
 
-###Script variables
+### Script variables
 Start by declaring the following variables:
 - Directories for location of the data, scripts, output and models.
 - Declare vectors patients_all and nurses_all which contains the alias of all users.
 - Declare the named vector nearables which links the alias with the UUID of the sensors for all the users.
   - Repeat for automation units
   
-###Script flow and expected data structure
+### Script flow and expected data structure
  
 The script expects .Rdata files to be located at the path of the data_dir variable.
 Each .Rdata file contains a data frame (named df_combined) with data for 1 day (from 06.30 in the morning, until 06.29 the next day e.g., 2017-08-24 06:30:00 EEST to 2017-08-25 06:29:59 EEST). The structure of the data is shown in the figures below.
