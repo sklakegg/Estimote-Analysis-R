@@ -19,7 +19,8 @@ Start by declaring the following variables:
   
 ### Script flow and expected data structure
  
-The script expects .Rdata files to be located at the path of the data_dir variable.
+The user only needs to run the main_script.R which will source() the scripts needed for analysis. An error message might indicate that the user need to install the required libraries used in each script.
+The main_script.R expects .Rdata files to be located at the path of the data_dir variable.
 Each .Rdata file contains a data frame (named df_combined) with data for 1 day (from 06.30 in the morning, until 06.29 the next day e.g., 2017-08-24 06:30:00 EEST to 2017-08-25 06:29:59 EEST). The structure of the data is shown in the figures below.
  
 ![screen shot 2018-09-06 at 16 04 43](https://user-images.githubusercontent.com/14874913/45159430-65526980-b1ef-11e8-9a40-c53979c21018.png)
