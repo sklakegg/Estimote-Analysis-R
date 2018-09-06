@@ -11,6 +11,9 @@ The data collection is done by equipping patients and nurses with [Estimote Stic
 accelerometer, UUID). These packets are received and parced by automation units which runs an app built using the 
 [Estimote SDK](https://developer.estimote.com/).
 
-
-
 **Script variables**
+
+Start by declaring the following variables:
+- Directories for location of the data, scripts, output and models.
+- Declare vectors patients_all and nurses_all which contains the alias of all users.
+- Declare the named vector nearables which links the alias with the UUID of the sensors for all the users.
