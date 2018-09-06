@@ -27,7 +27,7 @@ Each .Rdata file contains a data frame (named df_combined) with data for 1 day (
 
 ![screen shot 2018-09-06 at 16 05 16](https://user-images.githubusercontent.com/14874913/45159452-73a08580-b1ef-11e8-8675-8f7a53f9c2c5.png)
 
-The script loops through each .Rdata file and outputs a .Rdata file containing the result for each analysis. To use the script for real time computations, the for loop should be replaced with a daily db query that retrieves the data for that particular day. The user also needs to build the following models:
+The script loops through each .Rdata file and outputs a .Rdata file containing the result for each analysis. To use the script for real time computations, the for loop should be replaced with a daily db query that retrieves the data for that particular day. The user needs to build the following models before running the main_script.R:
 
 **Geofence model**
 
