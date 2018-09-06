@@ -12,23 +12,17 @@ models_dir <- paste0(base_dir,"Desktop")
 patients_all <- c("P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10", "P11", "P12", "P13", "P14", "P15")
 nurses_all <- c("N1", "N2", "N3", "N4", "N5", "N6")
 
-nearables <- c(P1 = "5f4342ad0b50e12e", P1 = "c75df300046c68a7",
-               P2 = "b018f4875089351e", P2 = "785f15c4e4931b15",
-               P3 = "c178a0d5583f2d23", P3="666203c5e3fcefad", P4 = "2e1d49749361579a")
-
-beacons <- c(BR2 = "[31353db1b2b0ce469ef951c0851b2b33]", BR3 = "[876c665b7fc4594ce322cd86ef142130]", 
-             BR4 = "[587af1a51d8b850bccc696676fbe8f07]", BR6 = "[d489399972e76e8994970fd35591f012]")
+nearables <- c(P1 = "<Insert UUID>", P2 = "<Insert UUID>",
+               N1 = "<Insert UUID>", N2 = "<Insert UUID>",
+               B1 = "<Insert UUID>", B2="<Insert UUID>", B3 = "<Insert UUID>")
 
 # Needs to match with features used in geofence prediction model
-automation_units <- c(RM1 = "86bdc202-a140-4ed0-9137-769ac5bd679f", RM1 = "31bb9317-6a05-45e2-8248-fabb5890a6c7",
-                 RM2 = "70a0e7d9-cd75-476e-bf97-9edc8ad6b280", RM2 = "9fc52184-4910-46bd-a4fe-1e22fe989698",
-                 RM3 = "8b540e2a-dd09-47ee-af96-5387190833ab", RM3 = "7e48111e-9df8-4578-be36-0ad20ccf175f")
+automation_units <- c(RM1 = "<Insert UUID>", RM1 = "<Insert UUID>",
+                 RM2 = "<Insert UUID>", RM2 = "<Insert UUID>",
+                 RM3 = "<Insert UUID>", RM3 = "<Insert UUID>")
 
 bed_sensors <- unique(grep('B+', names(nearables), value=TRUE))
 human_sensors <- unique(grep('P|N+', names(nearables), value=TRUE))
-
-public_zones <- c("s16", "s17", "s18", "s19")
-private_rooms <- c("s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8", "s9", "s10", "s11", "s12", "s13", "s14", "s15")
 
 # Load list of .Rdata
 setwd(data_dir)

@@ -196,26 +196,6 @@ run_proximity_script <- function(location_data_df, day_start_timestamp, day_end_
     })
     each_pat_nrow <- cbind(adjency_list, each_pat_nrow)
     
-    # Time in each zone per hour
-    sum_time_section <- function(x) {
-      start <- 0
-      end <- 0
-      j <- 1
-      sum_df_time <- data.frame(matrix(ncol = 2, nrow = 0))
-      colnames(sum_df_time) <- c("sum_time_public", "sum_time_private")
-      while (end < 50400) { 
-        start <- end + 1
-        end <- start + 3599
-        person_zone <- table(x[start:end])
-        sum_time_public <- sum(person_zone[which(names(person_zone) %in% public_zones)])
-        sum_time_private <- sum(person_zone[which(names(person_zone) %in% private_rooms)])  
-        sum_df_time <- rbind(sum_df_time, data.frame(sum_time_public, sum_time_private))
-        j <- j + 1
-      }
-      return(sum_df_time)
-    }
-    time_zone_perhour <- apply(time_others_df, 2, sum_time_section)
-    
     # Time around nurses.
     time_nurses_df <- df_loc_preds
     time_nurses_df <- time_nurses_df %>% mutate_all(as.character)
@@ -359,20 +339,6 @@ run_proximity_script <- function(location_data_df, day_start_timestamp, day_end_
     prox_df_nrow <- as.data.frame(prox_df_nrow)
     setwd(output_dir)
     save(prox_df_nrow, file = paste(current_date, "social_proximity_nrow.Rdata", sep = " - "))
-    
-    # Time per zone per hour
-    sum_df_time <- data.frame(matrix(ncol = 2, nrow = 14, 0))
-    colnames(sum_df_time) <- c("sum_time_public", "sum_time_private")
-    nurspat_vec <- c(nurses_all, patients_all)
-    miss_nurspat <- nurspat_vec[which(!nurspat_vec %in% names(time_zone_perhour))]
-    if (length(miss_nurspat) > 0) {
-      for(i in 1:length(miss_nurspat)) {
-        time_zone_perhour[[miss_nurspat[i]]] <- sum_df_time
-      }
-    }
-    time_zone_perhour <- time_zone_perhour[nurspat_vec]
-    setwd(output_dir)
-    save(time_zone_perhour, file = paste(current_date, "time_per_zone.Rdata", sep = " - "))
     
     # Time around nurses per hour
     time_nurses_perhour <- as.data.frame(time_nurses_perhour)
