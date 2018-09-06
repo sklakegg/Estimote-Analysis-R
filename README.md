@@ -29,10 +29,12 @@ Each .Rdata file contains a data frame (named df_combined) with data for 1 day (
 The script loops through each .Rdata file and outputs a .Rdata file containing the result for each analysis. To use the script for real time computations, the for loop should be replaced with a daily db query that retrieves the data for that particular day. The user also needs to build the following models:
 
 **Geofence model**
+
 The facility which the data is collected from should be divided into N geofences. RSSI values can then be collected from each geofence to form the following training shown below. A classification model can then be trained from this data.
 
 ![screen shot 2018-09-06 at 16 34 07](https://user-images.githubusercontent.com/14874913/45160649-b57efb00-b1f2-11e8-8201-3df6ac014069.png)
 
 **Bed models**
+
 A script is also included to create the bed models for in-bed prediction.
  
