@@ -31,7 +31,7 @@ The script loops through each .Rdata file and outputs a .Rdata file containing t
 
 **Geofence model**
 
-The facility which the data is collected from should be divided into N geofences. RSSI values can then be collected from each geofence to form the following training shown below. A classification model can then be trained from this data.
+The facility which the data is collected from should be divided into N geofences. RSSI values can then be collected from each geofence to form the training set shown below. A classification model can then be trained from this data.
 
 ![screen shot 2018-09-06 at 16 34 07](https://user-images.githubusercontent.com/14874913/45160649-b57efb00-b1f2-11e8-8201-3df6ac014069.png)
 
