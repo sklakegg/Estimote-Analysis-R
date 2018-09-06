@@ -1,7 +1,6 @@
 # Estimote-Analysis-R
 
 **Introduction**
-
 This script analysises various aspects of the sociocultural context in a nursing home:
 - Patients activity, sleep and proximity to other patients and nurses
 - Nurses activity and proximity to patients
@@ -12,8 +11,12 @@ accelerometer, UUID). These packets are received and parced by automation units 
 [Estimote SDK](https://developer.estimote.com/).
 
 **Script variables**
-
 Start by declaring the following variables:
 - Directories for location of the data, scripts, output and models.
 - Declare vectors patients_all and nurses_all which contains the alias of all users.
 - Declare the named vector nearables which links the alias with the UUID of the sensors for all the users.
+  - Repeat for automation units
+  
+ **Script flow and expected data structure**
+ 
+ 
